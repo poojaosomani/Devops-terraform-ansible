@@ -8,17 +8,17 @@ terraform {
 }
 
 provider "aws" {
-region = "us-east-1"
+region = "ap-south-1"
 }
 resource "aws_instance" "myawsserver" {
-  ami = "ami-0b0dcb5067f052a63"
+  ami = "ami-078efad6f7ec18b8a"
   instance_type = "t2.micro"
-  key_name = "raman-import"
+  key_name = "pooja-import"
 
   tags = {
-    Name = "Raman-DevOps-batch-server"
+    Name = "Pooja-DevOps-batch-server"
     env = "Production"
-    owner = "Raman Khanna"
+    owner = "Pooja H"
   }
   provisioner "local-exec" {
     command = "echo The servers IP address is ${self.public_ip} && echo ${self.public_ip} > /tmp/inv"
